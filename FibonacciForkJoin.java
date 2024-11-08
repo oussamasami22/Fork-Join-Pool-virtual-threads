@@ -7,8 +7,16 @@ public class FibonacciForkJoin extends RecursiveTask<Integer> {
     public FibonacciForkJoin(int n) {
         this.n = n;
     }
+    private int calculElementaire(int n){
+        if (n <= 1){
+            return n;
+        }
+        else{
+            return calculElementaire(n - 1) + calculElementaire(n - 2);
+        }
+    }
 
-    @Override
+     /* @Override
     protected Integer compute() {
         if (n <= 1) {
             return n;
@@ -17,7 +25,7 @@ public class FibonacciForkJoin extends RecursiveTask<Integer> {
         f1.fork();
         FibonacciForkJoin f2 = new FibonacciForkJoin(n - 2);
         return f2.compute() + f1.join();
-    }
+    } */
 
     public static void main(String[] args) {
         long depart = System.currentTimeMillis();
