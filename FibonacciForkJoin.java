@@ -18,7 +18,7 @@ public class FibonacciForkJoin extends RecursiveTask<Integer> {
 
      @Override
     protected Integer compute() {
-        if (n <= 15) {
+        if (n <= 20) {
             resultat = calculElementaire(n);
             return resultat;
 
